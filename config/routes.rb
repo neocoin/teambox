@@ -74,12 +74,19 @@ Teambox::Application.routes.draw do
         get :external_view
         get :delete
         get :appearance
+        get :storage_options
       end
       resources :memberships do
         member do
           get :change_role
           get :add
           get :remove
+        end
+      end
+      resources :synced_files do
+        collection do
+          post :create_bucket
+          post :create_account
         end
       end
     end
@@ -89,6 +96,7 @@ Teambox::Application.routes.draw do
     match '/account/profile' => 'users#edit', :as => :account_profile, :sub_action => 'profile'
     match '/account/linked_accounts' => 'users#edit', :as => :account_linked_accounts, :sub_action => 'linked_accounts'
     match '/account/notifications' => 'users#edit', :as => :account_notifications, :sub_action => 'notifications'
+    match '/account/storage' => 'users#edit', :as => :account_storage, :sub_action => 'storage'
     match '/account/delete' => 'users#edit', :as => :account_delete, :sub_action => 'delete'
     match '/account/destroy' => 'users#destroy', :as => :destroy_user
     match '/account/activity_feed_mode/collapsed' => 'users#change_activities_mode', :as => :collapse_activities, :collapsed => true
@@ -140,6 +148,12 @@ Teambox::Application.routes.draw do
           put :accept
           put :decline
           get :resend
+        end
+      end
+      
+      resources :synced_files do
+        collection do
+          get :bucket_missing
         end
       end
 

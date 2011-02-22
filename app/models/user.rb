@@ -61,7 +61,8 @@ class User < ActiveRecord::Base
                   :notify_conversations,
                   :notify_tasks,
                   :splash_screen,
-                  :wants_task_reminder
+                  :wants_task_reminder,
+                  :nomadesk_password
 
   attr_accessor   :activate, :old_password
 
@@ -262,6 +263,10 @@ class User < ActiveRecord::Base
 
   def users_for_user_map
     @users_for_user_map ||= self.organizations.map{|o| o.users + o.users_in_projects }.flatten.uniq
+  end
+  
+  def nomadesk_email
+    self.email
   end
 
   protected
