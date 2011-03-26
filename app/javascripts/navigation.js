@@ -140,5 +140,5 @@ document.on('click', '.nav_links .el .show_less', function(e,el) {
   $$('.el.extra').invoke('hide')
 })
 
-window.onscroll = function() { NavigationBar.scroll() }
+//window.onscroll = function() { NavigationBar.scroll() }
 
