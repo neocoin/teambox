@@ -1,3 +1,5 @@
+$column_width: 250px 
+
 html, body
   margin: 0px
   padding: 0px
@@ -8,29 +10,35 @@ div.wrapper
   background: white
   +clearing
 
+#column
+  width: $column_width
 div.content_wrap
-  float: left
-  width: 640px
+  float: right
+  //width: 680px
   padding: 10px
     right: 0px
+  position: absolute
+  left: $column_width + 20px
+  right: 10px
 div.column_wrap
-  float: right
-  width: 300px
+  float: left
+  width: $column_width
   font-size: 12px
   div.column
     background: rgb(255, 255, 255)
     padding: 10px
       left: 0
     border:
-      left: 1px solid #eee
+      right: 1px solid #eee
     select
-      max-width: 280px
+      max-width: $column_width - 20px
     .view_sidebar
       margin-left: 15px
 
 div.container
   width: 960px
   margin: 0px auto
+  float: left
 
 // TODO: remove extra element and use +clearing
 div.clear
