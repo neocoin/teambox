@@ -28,10 +28,13 @@
       .wrapper
         - show_flash
         .content_wrap
+          .separator All Projects
           .content#content= yield
         .column_wrap
           .column#column
+            .separator My Activity
             = render 'shared/navigation'
+            .separator More stuff
             .view_sidebar
               = yield :column
       =# footer
