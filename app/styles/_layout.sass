@@ -33,7 +33,6 @@ div.column_wrap
       margin-left: 15px
 
 div.container
-  width: 960px
   margin: 0px auto
   float: left
 
@@ -102,7 +101,9 @@ p.flash-notice
   background: #E7E7E7
   background-image: -moz-linear-gradient(top,#F3F3F3,#D7D7D7)
   background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,#F3F3F3),color-stop(1,#D7D7D7))
-  border-bottom: 1px solid #B7B7B7
+  border:
+    bottom: 1px solid #B7B7B7
+    top: 1px solid #DDD
   color: #777
   text-shadow: white 0 1px 0
   text-transform: uppercase
@@ -115,3 +116,8 @@ p.flash-notice
   -o-user-select: none
   user-select: none
   -webkit-background-clip: padding-box
+  &.with_margin
+    margin-top: 20px
+  .column_wrap &
+    +gradient(#D8DEE5, #C6D1DD)
+    border-top: 1px solid #A4ACB3
