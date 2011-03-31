@@ -4,37 +4,34 @@ html, body
   margin: 0px
   padding: 0px
   background-color: white
+  overflow: hidden
 
-div.wrapper
-  clear: both
-  background: white
-  +clearing
+div.content_wrap, div.column_wrap
+  position: fixed
+  top: 68px
+  bottom: 0
+  overflow: hidden
 
 #column
   width: $column_width
 div.content_wrap
-  float: right
-  position: absolute
   left: $column_width
   right: 0
   border-left: 1px solid #B7B7B7
+  overflow-y: auto
   .content
     margin: 10px
 div.column_wrap
-  float: left
-  width: $column_width
   font-size: 12px
-  height: 600px
+  left: 0
+  width: $column_width
   background: #e6edf5
+  overflow: hidden
   div.column
     select
       max-width: $column_width - 20px
     .view_sidebar
       margin-left: 15px
-
-div.container
-  margin: 0px auto
-  float: left
 
 // TODO: remove extra element and use +clearing
 div.clear
